@@ -1,12 +1,6 @@
 /*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
+COLORS
 */
-
 /* 
 - change the box model so that the borders and paddings are no longer
 added to the total width and height that we specify for the box
@@ -15,13 +9,13 @@ added to the total width and height that we specify for the box
 *
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit; /* box-sizing gets inherited */
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* box-sizing gets inherited */ }
 
 html {
-    /* 
+  /* 
     - root font size of the entire document!
     - WARNING! --> setting this property in pxs is a bad practice since we avoid the user
     to be able to modify the default font-size from its browser.
@@ -29,133 +23,101 @@ html {
     value of the font-size in a browser is 16px -> 10px/16px * 100 = 62.5%. Where 10px is
     the size in pixels we wanted to use. -> so in this way 1rem = 10px = 16px * 62.5%.
     */
-    font-size: 62.5%;
-} 
+  font-size: 62.5%; }
 
 body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    /* font-size: 16px; */
-    line-height: 1.7;
-    color: #777;
-    padding: 3rem;
-}
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  box-sizing: border-box; }
 
 /* 
 - set the height of this element to 95% of the viewport heigh 
 - background tries always to fit the viewport 
 */
 .header {
-    height: 95vh;
-    background-image: linear-gradient(
-            to right,
-            rgba(126, 213, 111, 0.801),
-            rgba(40, 180, 133, 0.801)
-        ),
-        url(../img/hero.jpg);
-    background-size: cover;
-    background-position: top;
-    position: relative;
+  height: 95vh;
+  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
 
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
-
-.logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-}
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem; }
 
 /* width resized automatically */
-.logo {
-    height: 3.5rem;
-}
+.header__logo {
+  height: 3.5rem; }
 
-.text-box {
-    position: absolute;
-    top: 40%; /* relative to the parent 40% */
-    left: 50%;
-    transform: translate(-50%, -50%); /* transalte the origine*/
-    text-align: center;
-}
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  /* relative to the parent 40% */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* transalte the origine*/
+  text-align: center; }
 
 .heading-primary {
-    color: #fff;
-    text-transform: uppercase;
+  color: #fff;
+  text-transform: uppercase;
+  /* determines if the backpart of an element is hidden or visible */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
 
-    /* determines if the backpart of an element is hidden or visible */
-    backface-visibility: hidden;
-    margin-bottom: 6rem;
-}
-
-.heading-primary-main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3rem;
-
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-
-    /* 
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3rem;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  /* 
     animation-delay: 2s; 
     animation-iteration-count: 3;
-    */
-}
+    */ }
 
-.heading-primary-sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-
-    animation: moveInRight 1s ease-out;
-}
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+  animation: moveInRight 1s ease-out; }
 
 @keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-10rem);
-    }
-
-    80% {
-        transform: translateX(1rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
 
 @keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(10rem);
-    }
-
-    80% {
-        transform: translateX(-1rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
 
 @keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(5rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+  0% {
+    opacity: 0;
+    transform: translateY(5rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
 
 /*
 :link is a pseudo-class. A pseudo-class represents a special state of a selector.
@@ -164,61 +126,55 @@ In this case we want the button in visited and link state to look the same.
 */
 .btn:link,
 .btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all 0.2s; /* transition has always to be set in the initial state */
-    position: relative;
-    font-size: 1.6rem;
-}
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  /* transition has always to be set in the initial state */
+  position: relative;
+  font-size: 1.6rem; }
 
 .btn:hover {
-    transform: translateY(-0.3rem);
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
-}
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn:active {
-    transform: translateY(-0.1rem);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
-.btn-white {
-    background-color: #fff;
-    color: #777;
-}
+.btn--white {
+  background-color: #fff;
+  color: #777; }
 
 /*
 ::after pseudo-class creates a virtual element. In this case we create an element
 which looks exactly like the button we already have. (It is basically treated as its child)
 */
 .btn::after {
-    content: ""; /* necessary, otherwise the virtual element will not appear */
-    display: inline-block; /* same as the parent */
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1; /* set behind the parent element */
+  content: "";
+  /* necessary, otherwise the virtual element will not appear */
+  display: inline-block;
+  /* same as the parent */
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* set behind the parent element */
+  transition: all 0.4s; }
 
-    transition: all 0.4s;
-}
-
-.btn-white::after {
-    background-color: #fff;
-}
+.btn--white::after {
+  background-color: #fff; }
 
 .btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0; }
 
-.btn-animated {
-    animation: moveInBottom 0.5s ease-out 0.75s;
-
-    /* automatically applies the styles of 0% before the animations starts*/
-    animation-fill-mode: backwards;
-}
+.btn--animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  /* automatically applies the styles of 0% before the animations starts*/
+  animation-fill-mode: backwards; }
