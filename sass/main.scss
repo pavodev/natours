@@ -7,14 +7,14 @@ $color-primary-dark: #28b485;
 
 $color-grey-dark: #777;
 $color-white: #fff;
+$color-black: #000;
 
 /* 
 - change the box model so that the borders and paddings are no longer
 added to the total width and height that we specify for the box
 - after and before pseudo-elements get this behaviour, in this way
 */
-*
-*::after,
+* *::after,
 *::before {
     margin: 0;
     padding: 0;
@@ -31,7 +31,7 @@ html {
     the size in pixels we wanted to use. -> so in this way 1rem = 10px = 16px * 62.5%.
     */
     font-size: 62.5%;
-} 
+}
 
 body {
     font-family: "Lato", sans-serif;
@@ -60,25 +60,25 @@ body {
     position: relative;
 
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
 
-.header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-}
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
 
-/* width resized automatically */
-.header__logo {
-    height: 3.5rem;
-}
+    /* width resized automatically */
+    &__logo {
+        height: 3.5rem;
+    }
 
-.header__text-box {
-    position: absolute;
-    top: 40%; /* relative to the parent 40% */
-    left: 50%;
-    transform: translate(-50%, -50%); /* transalte the origine*/
-    text-align: center;
+    &__text-box {
+        position: absolute;
+        top: 40%; /* relative to the parent 40% */
+        left: 50%;
+        transform: translate(-50%, -50%); /* transalte the origine*/
+        text-align: center;
+    }
 }
 
 .heading-primary {
@@ -88,31 +88,31 @@ body {
     /* determines if the backpart of an element is hidden or visible */
     backface-visibility: hidden;
     margin-bottom: 6rem;
-}
 
-.heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3rem;
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3rem;
 
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
 
-    /* 
-    animation-delay: 2s; 
-    animation-iteration-count: 3;
-    */
-}
+        /* 
+            animation-delay: 2s; 
+            animation-iteration-count: 3;
+        */
+    }
 
-.heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
 
-    animation: moveInRight 1s ease-out;
+        animation: moveInRight 1s ease-out;
+    }
 }
 
 @keyframes moveInLeft {
@@ -164,63 +164,65 @@ body {
 Pseudo-classes are used to style elements under special conditions.
 In this case we want the button in visited and link state to look the same.
 */
-.btn:link,
-.btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all 0.2s; /* transition has always to be set in the initial state */
-    position: relative;
-    font-size: 1.6rem;
-}
+.btn {
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all 0.2s; /* transition has always to be set in the initial state */
+        position: relative;
+        font-size: 1.6rem;
+    }
 
-.btn:hover {
-    transform: translateY(-0.3rem);
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
-}
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 1rem rgba($color-black, 0.2);
 
-.btn:active {
-    transform: translateY(-0.1rem);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
 
-.btn--white {
-    background-color: $color-white;
-    color: $color-grey-dark;
-}
+    &:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    }
 
-/*
-::after pseudo-class creates a virtual element. In this case we create an element
-which looks exactly like the button we already have. (It is basically treated as its child)
-*/
-.btn::after {
-    content: ""; /* necessary, otherwise the virtual element will not appear */
-    display: inline-block; /* same as the parent */
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1; /* set behind the parent element */
+    /*
+        ::after pseudo-class creates a virtual element. In this case we create an element
+        which looks exactly like the button we already have. (It is basically treated as its child)
+    */
+    &::after {
+        content: ""; /* necessary, otherwise the virtual element will not appear */
+        display: inline-block; /* same as the parent */
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1; /* set behind the parent element */
 
-    transition: all 0.4s;
-}
+        transition: all 0.4s;
+    }
 
-.btn--white::after {
-    background-color: $color-white;
-}
+    &--animated {
+        animation: moveInBottom 0.5s ease-out 0.75s;
 
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
+        /* automatically applies the styles of 0% before the animations starts*/
+        animation-fill-mode: backwards;
+    }
 
-.btn--animated {
-    animation: moveInBottom 0.5s ease-out 0.75s;
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
 
-    /* automatically applies the styles of 0% before the animations starts*/
-    animation-fill-mode: backwards;
+        &::after {
+            background-color: $color-white;
+        }
+    }
 }
