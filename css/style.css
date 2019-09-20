@@ -1,12 +1,14 @@
 /*
 COLORS
 */
+/* partial scss file */
 /* 
 - change the box model so that the borders and paddings are no longer
 added to the total width and height that we specify for the box
 - after and before pseudo-elements get this behaviour, in this way
 */
-* *::after,
+*,
+*::after,
 *::before {
   margin: 0;
   padding: 0;
@@ -20,70 +22,12 @@ html {
     to be able to modify the default font-size from its browser.
     - The best practice is to actually use a percentage: since most of the times the default
     value of the font-size in a browser is 16px -> 10px/16px * 100 = 62.5%. Where 10px is
-    the size in pixels we wanted to use. -> so in this way 1rem = 10px = 16px * 62.5%.
+    the size in pixels we wanted to  use. -> so in this way 1rem = 10px = 16px * 62.5%.
     */
   font-size: 62.5%; }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
   box-sizing: border-box; }
-
-/* 
-- set the height of this element to 95% of the viewport heigh 
-- background tries always to fit the viewport 
-*/
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* width resized automatically */ }
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    /* relative to the parent 40% */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* transalte the origine*/
-    text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  /* determines if the backpart of an element is hidden or visible */
-  backface-visibility: hidden;
-  margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    /* 
-            animation-delay: 2s; 
-            animation-iteration-count: 3;
-        */ }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out; }
 
 @keyframes moveInLeft {
   0% {
@@ -112,6 +56,39 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0); } }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /* determines if the backpart of an element is hidden or visible */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* 
+            animation-delay: 2s; 
+            animation-iteration-count: 3;
+        */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out; }
 
 /*
 :link is a pseudo-class. A pseudo-class represents a special state of a selector.
@@ -165,3 +142,30 @@ In this case we want the button in visited and link state to look the same.
     color: #777; }
     .btn--white::after {
       background-color: #fff; }
+
+/* 
+- set the height of this element to 95% of the viewport heigh 
+- background tries always to fit the viewport 
+*/
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* width resized automatically */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    /* relative to the parent 40% */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* transalte the origine*/
+    text-align: center; }
