@@ -13,7 +13,7 @@ In this case we want the button in visited and link state to look the same.
         border-radius: 10rem;
         transition: all 0.2s; /* transition has always to be set in the initial state */
         position: relative;
-        font-size: 1.6rem;
+        font-size: $default-font-size;
     }
 
     &:hover {
@@ -63,5 +63,31 @@ In this case we want the button in visited and link state to look the same.
         &::after {
             background-color: $color-white;
         }
+    }
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block; //so that we can use all the box properties like padding, etc.
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;
+
+        transition: all 0.2s;
+    }
+
+    &:hover {
+        background-color: $color-primary;
+        color: white;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+        transform: translateY(-2px);
+    }
+
+    &::active {
+        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
+        transform: translateY(0);
     }
 }

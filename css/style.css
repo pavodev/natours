@@ -97,7 +97,34 @@ body {
   display: inline-block;
   background-image: linear-gradient(to right, #7ed56f, #28b485);
   -webkit-background-clip: text;
-  color: transparent; }
+  color: transparent;
+  transition: all 0.2s;
+  letter-spacing: 0.2rem; }
+  .heading-secondary:hover {
+    transform: skewY(-3deg) skewX(-15deg);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.3); }
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem; }
 
 /*
 :link is a pseudo-class. A pseudo-class represents a special state of a selector.
@@ -152,6 +179,25 @@ In this case we want the button in visited and link state to look the same.
     .btn--white::after {
       background-color: #fff; }
 
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #55c57a;
+  padding: 3px;
+  transition: all 0.2s; }
+
+.btn-text:hover {
+  background-color: #55c57a;
+  color: white;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); }
+
+.btn-text::active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0); }
+
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
@@ -159,7 +205,6 @@ In this case we want the button in visited and link state to look the same.
 
 .row {
   max-width: 114rem;
-  background-color: #eee;
   margin: 0 auto;
   /*
         we select everything except the last-child!
@@ -171,7 +216,6 @@ In this case we want the button in visited and link state to look the same.
     display: table;
     clear: both; }
   .row [class^="col-"] {
-    background-color: orangered;
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
