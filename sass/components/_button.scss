@@ -64,6 +64,15 @@ In this case we want the button in visited and link state to look the same.
             background-color: $color-white;
         }
     }
+
+    &--green{
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-primary;
+        }
+    }
 }
 
 .btn-text {
