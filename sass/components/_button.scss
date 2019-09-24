@@ -4,6 +4,7 @@ Pseudo-classes are used to style elements under special conditions.
 In this case we want the button in visited and link state to look the same.
 */
 .btn {
+    &,
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -14,6 +15,10 @@ In this case we want the button in visited and link state to look the same.
         transition: all 0.2s; /* transition has always to be set in the initial state */
         position: relative;
         font-size: $default-font-size;
+
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
     }
 
     &:hover {
@@ -26,7 +31,9 @@ In this case we want the button in visited and link state to look the same.
         }
     }
 
-    &:active {
+    &:active,
+    &:focus {
+        outline: none;
         transform: translateY(-0.1rem);
         box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
     }
@@ -65,7 +72,7 @@ In this case we want the button in visited and link state to look the same.
         }
     }
 
-    &--green{
+    &--green {
         background-color: $color-primary;
         color: $color-white;
 
