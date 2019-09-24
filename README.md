@@ -2,7 +2,7 @@
 
 This project has been developed while attending the <a href="https://www.udemy.com/">udemy.com</a> course **Advanced CSS and Sass: Flexbox, Grid, Animations and More!** (<a href="http://jonas.io">Jonas.io</a>).
 
-Check it <a href="https://pavodev.github.io/Natours/#">here</a> !
+Check the implemented website <a href="https://pavodev.github.io/Natours/#">here</a> !
 
 ## Implementation
 The goal of this project was to take care of multiple **CSS, Sass and HTML** features and to develop a modern design web page.
