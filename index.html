@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><!-- added to make the hyphens work -->
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -185,7 +185,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section-tours">
+            <section class="section-tours" id="section-tours">
                 <div class="u-center-text u-margin-bottom-big">
                     <h2 class="heading-secondary">
                         Most popular tours
@@ -223,7 +223,7 @@
                                         <p class="card__price-only">Only</p>
                                         <p class="card__price-value">$297</p>
                                     </div>
-                                    <a href="#" class="btn btn--white"
+                                    <a href="#popup" class="btn btn--white"
                                         >Book now!</a
                                     >
                                 </div>
@@ -260,7 +260,7 @@
                                         <p class="card__price-only">Only</p>
                                         <p class="card__price-value">$497</p>
                                     </div>
-                                    <a href="#" class="btn btn--white"
+                                    <a href="#popup" class="btn btn--white"
                                         >Book now!</a
                                     >
                                 </div>
@@ -297,7 +297,7 @@
                                         <p class="card__price-only">Only</p>
                                         <p class="card__price-value">$897</p>
                                     </div>
-                                    <a href="#" class="btn btn--white"
+                                    <a href="#popup" class="btn btn--white"
                                         >Book now!</a
                                     >
                                 </div>
@@ -519,12 +519,21 @@
             </div>
         </footer>
 
-        <div class="popup">
-            <div class="popup__background">
-                HELLO
-            </div>
+        <div class="popup" id="popup">
             <div class="popup__content">
-                POPUP
+                <div class="popup__left">
+                    <img src="img/nat-8.jpg" alt="Tour Photo" class="popup__img">
+                    <img src="img/nat-9.jpg" alt="Tour Photo" class="popup__img">
+                </div>
+                <div class="popup__right">
+                    <a href="#section-tours" class="popup__close">&times;</a>
+                    <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before booking</h3>
+                    <p class="popup__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam pellentesque nec nam aliquam sem. Non sodales neque sodales ut etiam. Pretium nibh ipsum consequat nisl vel pretium lectus. Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo. Id volutpat lacus laoreet non curabitur. Vestibulum sed arcu non odio euismod. Facilisis magna etiam tempor orci. Gravida neque convallis a cras semper auctor. Velit sed ullamcorper morbi tincidunt ornare. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin. A condimentum vitae sapien pellentesque habitant morbi. Pharetra magna ac placerat vestibulum lectus mauris ultrices eros in. Dapibus ultrices in iaculis nunc sed augue lacus. Ut ornare lectus sit amet est. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam. Mattis molestie a iaculis at erat pellentesque adipiscing commodo elit. Elit ut aliquam purus sit amet luctus. Nulla at volutpat diam ut.
+                    </p>
+                    <a href="#" class="btn btn--green">Book!</a>
+                </div>
             </div>
         </div>
 
