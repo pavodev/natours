@@ -1,5 +1,5 @@
 @mixin clearfix {
-    &:after{
+    &:after {
         content: ""; //otherwise the pseudo-element doesn't appear
         display: table;
         clear: both; //clears both float left and right
@@ -12,4 +12,44 @@
     left: 50%;
 
     transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+/*
+    0 - 600px:              Phone
+    600px - 900px:          Tablet portrait
+    900px - 1200px:         Tablet landscape
+    [1200px - 1800px]:      is where our normal styles apply
+    1800px + :              Big desktop
+*/
+
+// content --> permits us to pass a block of code into a mixin
+@mixin respond-phone {
+    @media (max-width: 600px) { @content; }
+}
+
+/*
+$breakpoint argument choices: 
+    - phone
+    - tab-port
+    - tab-land
+    - big-desktop
+
+!IMPORTANT! In media queries ems and rems are not affected by a root font-size setting!! 
+That means that they depend on the font-size defined by the browser! --> 16px ore the value defined by the user.
+1em = 16px --> 600/16 = 37.5em
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content }; // 600px
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) { @content }; // 900px
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) { @content }; // 1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media (min-width: 112.5em) { @content }; // 1800px
+    }
 }

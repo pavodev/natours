@@ -1,4 +1,22 @@
 /*
+    0 - 600px:              Phone
+    600px - 900px:          Tablet portrait
+    900px - 1200px:         Tablet landscape
+    [1200px - 1800px]:      is where our normal styles apply
+    1800px + :              Big desktop
+*/
+/*
+$breakpoint argument choices: 
+    - phone
+    - tab-port
+    - tab-land
+    - big-desktop
+
+!IMPORTANT! In media queries ems and rems are not affected by a root font-size setting!! 
+That means that they depend on the font-size defined by the browser! --> 16px ore the value defined by the user.
+1em = 16px --> 600/16 = 37.5em
+*/
+/*
 COLORS
 */
 /*
@@ -29,8 +47,23 @@ html {
     - The best practice is to actually use a percentage: since most of the times the default
     value of the font-size in a browser is 16px -> 10px/16px * 100 = 62.5%. Where 10px is
     the size in pixels we wanted to  use. -> so in this way 1rem = 10px = 16px * 62.5%.
+
+    In responsive design, everything will change related to this value! 
+    But that's not enough to get a fully responsibe webpage!
     */
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  /* normal media queries */
+  /* media queries with content directive */
+  /* media queries with if directive */ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }

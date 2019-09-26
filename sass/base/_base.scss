@@ -21,10 +21,42 @@ html {
     - The best practice is to actually use a percentage: since most of the times the default
     value of the font-size in a browser is 16px -> 10px/16px * 100 = 62.5%. Where 10px is
     the size in pixels we wanted to  use. -> so in this way 1rem = 10px = 16px * 62.5%.
+
+    In responsive design, everything will change related to this value! 
+    But that's not enough to get a fully responsibe webpage!
     */
-    font-size: 62.5%;
+    font-size: 62.5%; // 1rem = 10px --> 10px/16px = 62.5%
+
+    /* normal media queries */
+    // @media (max-width: 600px) { font-size: 50%; }
+
+    /* media queries with content directive */
+    // @include respond-phone {
+    //     //content
+    //     font-size: 50%;
+    // }
+
+    /* media queries with if directive */
+    // unneccesary
+    // @include respond(phone){
+    //     font-size: 50%; 
+    // }
+
+    @include respond(tab-land){ // width < 1200px ?
+        font-size: 56.25%; // I want 1rem to be 9px --> 9/16 = 56.25%
+    }
+
+    @include respond(tab-port){ // width < 900px ?
+        font-size: 50%; // I want 1rem to be 8px (half of 16) --> 8/16 = 50%
+    }
+
+    @include respond(big-desktop){
+        font-size: 75%; // I want 1rem to be 12px --> 12/16 = 75%
+    }
 }
 
 body {
     box-sizing: border-box;
 }
+
+
