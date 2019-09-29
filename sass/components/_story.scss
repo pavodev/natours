@@ -2,7 +2,7 @@
     width: 75%;
     margin: 0 auto; //block element inside block element so we cane use this
     box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
-    background-color: rgba($color-white, .5);
+    background-color: rgba($color-white, 0.5);
     border-radius: 5px;
     padding: 6rem;
     padding-left: 9rem;
@@ -10,6 +10,16 @@
 
     transform: skewX(-12deg);
     position: relative;
+
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
+
+    @include respond(phone) {
+        transform: skew(0);
+    }
 
     // Problem, two transform would occure on __shape. So i had to add the skew transformation to each child involved.
     // & > * {
@@ -30,6 +40,10 @@
 
         transform: translateX(-3rem) skewX(12deg);
         overflow: hidden;
+
+        @include respond(phone) {
+            transform: translateX(-3rem) skew(0);
+        }
     }
 
     &__img {
@@ -41,6 +55,10 @@
 
     &__text {
         transform: skewX(12deg);
+
+        @include respond(phone) {
+            transform: skew(0);
+        }
     }
 
     &__caption {
@@ -62,7 +80,7 @@
         transform: translate(-50%, -50%);
     }
 
-    &:hover &__img{
+    &:hover &__img {
         transform: translateX(-4rem) scale(1);
         filter: blur(3px) brightness(80%);
     }
