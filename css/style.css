@@ -641,9 +641,6 @@ In this case we want the button in visited and link state to look the same.
   /*
         Used the table technique to get the same height both for the left and right side.
     */ }
-  @media (max-width: 56.25em) {
-    .popup {
-      overflow-y: scroll; } }
   .popup:target {
     opacity: 1;
     visibility: visible; }
@@ -679,17 +676,18 @@ In this case we want the button in visited and link state to look the same.
     padding: 3rem 5rem; }
     @media (max-width: 56.25em) {
       .popup__right {
-        display: table-cell;
+        width: 100%;
+        display: table-row;
         vertical-align: left;
-        padding: 2rem 2rem; } }
+        padding: 2rem 2rem;
+        overflow-y: auto; } }
   .popup__img {
     display: block;
     width: 100%; }
     @media (max-width: 56.25em) {
       .popup__img {
         display: inline-block;
-        width: 50%;
-        height: 100%; } }
+        width: 50%; } }
   .popup__text {
     font-size: 1.4rem;
     margin-bottom: 4rem;

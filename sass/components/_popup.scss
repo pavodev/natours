@@ -13,10 +13,6 @@
     visibility: hidden;
     transition: all 0.3s;
 
-    @include respond(tab-port) {
-        overflow-y: scroll;
-    }
-
     &:target {
         opacity: 1;
         visibility: visible;
@@ -61,9 +57,11 @@
         padding: 3rem 5rem;
 
         @include respond(tab-port) {
-            display: table-cell;
+            width: 100%;
+            display: table-row;
             vertical-align: left;
             padding: 2rem 2rem;
+            overflow-y: auto;
         }
     }
 
@@ -74,7 +72,6 @@
         @include respond(tab-port) {
             display: inline-block;
             width: 50%;
-            height: 100%;
         }
     }
 
@@ -119,7 +116,7 @@
             transition: all 0.2s;
             line-height: 1;
 
-            @include respond(tab-port){
+            @include respond(tab-port) {
                 top: 0.3rem;
                 right: 0.6rem;
             }
