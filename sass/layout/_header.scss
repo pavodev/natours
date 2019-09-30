@@ -3,7 +3,7 @@
 - background tries always to fit the viewport 
 */
 .header {
-    height: 95vh;
+    height: 85vh;
     background-image: linear-gradient(
             to right,
             rgba($color-primary-light, 0.8),
@@ -14,22 +14,25 @@
     background-position: top;
     position: relative;
 
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        height: 95vh;
+    }
 
     // 192dpi --> apple retina screens have this resolution
     // whenever the resolution is higher than this, this code will be applied.
     //-webkit added for safari
     @media (min-resolution: 192dpi) and (min-width: 37.5em),
-    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
-    (min-width: 125em) {
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+        (min-width: 125em) {
         background-image: linear-gradient(
                 to right,
-                rgba($color-secondary-light, 0.8), 
-                rgba($color-secondary-dark, 0.8)
+                rgba($color-primary-light, 0.8),
+                rgba($color-primary-dark, 0.8)
             ),
             url(../img/hero.jpg);
-    } 
+    }
 
     @include respond(phone) {
         clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
