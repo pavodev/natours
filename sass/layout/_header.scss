@@ -19,7 +19,10 @@
 
     // 192dpi --> apple retina screens have this resolution
     // whenever the resolution is higher than this, this code will be applied.
-    @media (min-resolution: 192dpi) and (min-width: 37.5em),(min-width: 125em) {
+    //-webkit added for safari
+    @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
         background-image: linear-gradient(
                 to right,
                 rgba($color-secondary-light, 0.8), 
