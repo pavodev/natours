@@ -60,6 +60,7 @@
 
     &__text {
         transform: skewX(12deg);
+        color: $color-grey-dark-2;
 
         @include respond(phone) {
             transform: skew(0);

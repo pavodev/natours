@@ -28,6 +28,14 @@
         }
     }
 
+    & h3 {
+        color: $color-grey-dark-2;
+    }
+
+    &__text {
+        color: $color-primary-dark
+    }
+
     &:hover {
         transform: translateY(-1.5rem) scale(1.03);
     }

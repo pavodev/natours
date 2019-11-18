@@ -60,6 +60,7 @@ html {
 body {
     box-sizing: border-box;
     padding: 3rem;
+    background-color: $color-grey-dark-2;
 
     @include respond(tab-port) {
         // width < 900px ?
@@ -69,5 +70,5 @@ body {
 
 ::selection {
     background-color: $color-primary;
-    color: $color-white;
+    color: $color-grey-dark;
 }

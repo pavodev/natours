@@ -69,14 +69,15 @@ html {
 
 body {
   box-sizing: border-box;
-  padding: 3rem; }
+  padding: 3rem;
+  background-color: #333; }
   @media only screen and (max-width: 56.25em) {
     body {
       padding: 0; } }
 
 ::selection {
-  background-color: #55c57a;
-  color: #fff; }
+  background-color: #ff7730;
+  color: #eee; }
 
 @keyframes moveInLeft {
   0% {
@@ -111,7 +112,7 @@ body {
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
-  color: #777; }
+  color: #eee; }
 
 .heading-primary {
   color: #fff;
@@ -150,7 +151,7 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-image: linear-gradient(to right, #ffb900, #974011);
   -webkit-background-clip: text;
   color: transparent;
   transition: all 0.2s;
@@ -163,7 +164,7 @@ body {
       font-size: 2.5rem; } }
   .heading-secondary:hover {
     transform: skewY(-3deg) skewX(-15deg);
-    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.3); }
+    text-shadow: 0.5rem 1rem 2rem rgba(151, 64, 17, 0.3); }
 
 .heading-tertiary {
   font-size: 1.6rem;
@@ -223,14 +224,14 @@ In this case we want the button in visited and link state to look the same.
     cursor: pointer; }
   .btn:hover {
     transform: translateY(-0.3rem);
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 1rem 1rem rgba(151, 64, 17, 0.2); }
     .btn:hover::after {
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0; }
   .btn:active, .btn:focus {
     outline: none;
     transform: translateY(-0.1rem);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 0.5rem 1rem rgba(151, 64, 17, 0.2); }
   .btn::after {
     content: "";
     /* necessary, otherwise the virtual element will not appear */
@@ -251,32 +252,32 @@ In this case we want the button in visited and link state to look the same.
     animation-fill-mode: backwards; }
   .btn--white {
     background-color: #fff;
-    color: #777; }
+    color: #333; }
     .btn--white::after {
       background-color: #fff; }
   .btn--green {
-    background-color: #55c57a;
+    background-color: #ff7730;
     color: #fff; }
     .btn--green::after {
-      background-color: #55c57a; }
+      background-color: #ff7730; }
 
 .btn-text:link, .btn-text:visited {
   font-size: 1.6rem;
-  color: #55c57a;
+  color: #ff7730;
   display: inline-block;
   text-decoration: none;
-  border-bottom: 1px solid #55c57a;
+  border-bottom: 1px solid #ff7730;
   padding: 3px;
   transition: all 0.2s; }
 
 .btn-text:hover {
-  background-color: #55c57a;
+  background-color: #ff7730;
   color: white;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1rem 2rem rgba(151, 64, 17, 0.15);
   transform: translateY(-2px); }
 
 .btn-text::active {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(151, 64, 17, 0.15);
   transform: translateY(0); }
 
 .composition {
@@ -286,7 +287,7 @@ In this case we want the button in visited and link state to look the same.
     */ }
   .composition__photo {
     width: 55%;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1.5rem 4rem rgba(151, 64, 17, 0.4);
     border-radius: 2px;
     position: absolute;
     z-index: 10;
@@ -297,7 +298,7 @@ In this case we want the button in visited and link state to look the same.
         float: left;
         position: relative;
         width: 33.33333333%;
-        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); } }
+        box-shadow: 0 1.5rem 3rem rgba(151, 64, 17, 0.2); } }
     .composition__photo--p1 {
       left: 0;
       top: -2rem; }
@@ -322,9 +323,9 @@ In this case we want the button in visited and link state to look the same.
           left: 0;
           transform: scale(1.1); } }
     .composition__photo:hover {
-      outline: 1.5rem solid #55c57a;
+      outline: 1.5rem solid #ff7730;
       transform: scale(1.05) translateY(-0.5rem);
-      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      box-shadow: 0 2.5rem 4rem rgba(151, 64, 17, 0.5);
       z-index: 20; }
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.95); }
@@ -335,7 +336,7 @@ In this case we want the button in visited and link state to look the same.
   padding: 2.5rem;
   text-align: center;
   border-radius: 3px;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1.5rem 4rem rgba(151, 64, 17, 0.15);
   transition: all 0.2s; }
   @media only screen and (max-width: 56.25em) {
     .feature-box {
@@ -344,12 +345,16 @@ In this case we want the button in visited and link state to look the same.
     font-size: 6rem;
     margin-bottom: 0.5rem;
     display: inline-block;
-    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    background-image: linear-gradient(to right, #ffb900, #974011);
     -webkit-background-clip: text;
     color: transparent; }
     @media only screen and (max-width: 56.25em) {
       .feature-box__icon {
         margin-bottom: 0; } }
+  .feature-box h3 {
+    color: #333; }
+  .feature-box__text {
+    color: #974011; }
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.03); }
 
@@ -368,18 +373,18 @@ In this case we want the button in visited and link state to look the same.
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 5px;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1.5rem 4rem rgba(151, 64, 17, 0.15);
     overflow: hidden; }
     .card__side--front {
       background-color: #fff; }
     .card__side--back {
       transform: rotateY(180deg); }
       .card__side--back--1 {
-        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
-      .card__side--back--2 {
-        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
-      .card__side--back--3 {
         background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+      .card__side--back--2 {
+        background-image: linear-gradient(to right bottom, #ffb900, #974011); }
+      .card__side--back--3 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
   .card:hover .card__side--front {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {
@@ -393,11 +398,11 @@ In this case we want the button in visited and link state to look the same.
     border-top-left-radius: 3px;
     border-top-right-radius: 3px; }
     .card__picture--1 {
-      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg); }
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-5.jpg); }
     .card__picture--2 {
-      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg); }
+      background-image: linear-gradient(to right bottom, #ffb900, #974011), url(../img/nat-6.jpg); }
     .card__picture--3 {
-      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg); }
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-7.jpg); }
   .card__heading {
     font-size: 2.8rem;
     font-weight: 300;
@@ -413,11 +418,11 @@ In this case we want the button in visited and link state to look the same.
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone; }
     .card__heading-span--1 {
-      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
-    .card__heading-span--2 {
-      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
-    .card__heading-span--3 {
       background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(151, 64, 17, 0.85)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
   .card__details {
     padding: 1 3rem; }
     .card__details ul {
@@ -427,7 +432,8 @@ In this case we want the button in visited and link state to look the same.
       .card__details ul li {
         text-align: center;
         font-size: 1.5rem;
-        padding: 1rem; }
+        padding: 1rem;
+        color: #333; }
         .card__details ul li:not(:last-child) {
           border-bottom: 1px solid #eee; }
   .card__cta {
@@ -452,7 +458,7 @@ In this case we want the button in visited and link state to look the same.
       height: auto;
       border-radius: 5px;
       background-color: #fff;
-      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+      box-shadow: 0 1.5rem 4rem rgba(151, 64, 17, 0.15); }
       .card__side {
         height: auto;
         position: relative;
@@ -477,7 +483,7 @@ In this case we want the button in visited and link state to look the same.
 .story {
   width: 75%;
   margin: 0 auto;
-  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3rem 6rem rgba(151, 64, 17, 0.1);
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   padding: 6rem;
@@ -516,7 +522,8 @@ In this case we want the button in visited and link state to look the same.
     transition: all 0.5s;
     backface-visibility: hidden; }
   .story__text {
-    transform: skewX(12deg); }
+    transform: skewX(12deg);
+    color: #333; }
     @media only screen and (max-width: 37.5em) {
       .story__text {
         transform: skew(0); } }
@@ -573,12 +580,12 @@ In this case we want the button in visited and link state to look the same.
       width: 100%; } }
   .form__input:focus {
     outline: none;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-    border-bottom: 3px solid #55c57a; }
+    box-shadow: 0 1rem 2rem rgba(151, 64, 17, 0.1);
+    border-bottom: 3px solid #ff7730; }
   .form__input:focus:invalid {
     border-bottom: 3px solid red; }
   .form__input::-webkit-input-placeholder {
-    color: #999; }
+    color: #333; }
 
 .form__label {
   font-size: 1.2rem;
@@ -608,12 +615,13 @@ In this case we want the button in visited and link state to look the same.
   font-size: 1.6rem;
   cursor: pointer;
   position: relative;
-  padding-left: 4.5rem; }
+  padding-left: 4.5rem;
+  color: #333; }
 
 .form__radio-btn {
   height: 3rem;
   width: 3rem;
-  border: 5px solid #55c57a;
+  border: 5px solid #ff7730;
   border-radius: 50%;
   display: inline-block;
   position: absolute;
@@ -629,7 +637,7 @@ In this case we want the button in visited and link state to look the same.
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #55c57a;
+    background-color: #ff7730;
     opacity: 0;
     transition: opacity 0.3s; }
 
@@ -642,7 +650,7 @@ In this case we want the button in visited and link state to look the same.
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(151, 64, 17, 0.8);
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
@@ -654,7 +662,7 @@ In this case we want the button in visited and link state to look the same.
     .popup {
       -webkit-backdrop-filter: blur(5px);
       backdrop-filter: blur(5px);
-      background-color: rgba(0, 0, 0, 0.3); } }
+      background-color: rgba(151, 64, 17, 0.3); } }
   .popup:target {
     opacity: 1;
     visibility: visible; }
@@ -665,7 +673,7 @@ In this case we want the button in visited and link state to look the same.
     transform: translate(-50%, -50%);
     width: 75%;
     background-color: #fff;
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2rem 4rem rgba(151, 64, 17, 0.2);
     border-radius: 5px;
     display: table;
     overflow: hidden;
@@ -723,7 +731,7 @@ In this case we want the button in visited and link state to look the same.
     opacity: 1;
     transform: translate(-50%, -50%) scale(1); }
   .popup__close:link, .popup__close:visited {
-    color: #777;
+    color: #eee;
     position: absolute;
     top: 1.7rem;
     right: 2.5rem;
@@ -737,10 +745,10 @@ In this case we want the button in visited and link state to look the same.
         top: 0.3rem;
         right: 0.6rem; } }
   .popup__close:hover {
-    color: #55c57a; }
+    color: #ff7730; }
 
 .section-about {
-  background-color: #f7f7f7;
+  background-color: #333;
   padding: 25rem 0;
   margin-top: -20vh; }
   @media only screen and (max-width: 56.25em) {
@@ -749,7 +757,7 @@ In this case we want the button in visited and link state to look the same.
 
 .section-features {
   padding: 20rem 0;
-  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/nat-4.jpg);
+  background-image: linear-gradient(to right, rgba(255, 185, 0, 0.8), rgba(151, 64, 17, 0.8)), url(../../img/nat-4.jpg);
   background-size: cover;
   transform: skewY(-7deg);
   margin-top: -13rem; }
@@ -760,7 +768,7 @@ In this case we want the button in visited and link state to look the same.
       padding: 10rem 0; } }
 
 .section-tours {
-  background-color: #f7f7f7;
+  background-color: #333;
   padding: 25rem 0 5rem 0;
   margin-top: -12rem; }
   @media only screen and (max-width: 56.25em) {
@@ -779,7 +787,7 @@ In this case we want the button in visited and link state to look the same.
 
 .section-book {
   padding: 15rem 0;
-  background-image: linear-gradient(to right bottom, #7ed56f, #55c57a); }
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
   @media only screen and (max-width: 56.25em) {
     .section-book {
       padding: 10rem 0; } }
@@ -788,7 +796,7 @@ In this case we want the button in visited and link state to look the same.
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 50%, transparent 50%), url(../img/nat-10.jpg);
   background-size: 100%;
   border-radius: 5px;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25); }
+  box-shadow: 0 1.5rem 4rem rgba(151, 64, 17, 0.25); }
   @media only screen and (max-width: 75em) {
     .book {
       background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../img/nat-10.jpg);
@@ -855,7 +863,7 @@ In this case we want the button in visited and link state to look the same.
 */
 .header {
   height: 85vh;
-  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
+  background-image: linear-gradient(to right, rgba(255, 185, 0, 0.8), rgba(151, 64, 17, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   position: relative;
@@ -867,7 +875,7 @@ In this case we want the button in visited and link state to look the same.
       height: 95vh; } }
   @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (min-width: 125em) {
     .header {
-      background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg); } }
+      background-image: linear-gradient(to right, rgba(255, 185, 0, 0.8), rgba(151, 64, 17, 0.8)), url(../img/hero.jpg); } }
   @media only screen and (max-width: 37.5em) {
     .header {
       clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
@@ -891,7 +899,7 @@ In this case we want the button in visited and link state to look the same.
   background-color: #333;
   padding: 10rem 0;
   font-size: 1.4rem;
-  color: #f7f7f7; }
+  color: #eee; }
   @media only screen and (max-width: 56.25em) {
     .footer {
       padding: 8rem 0; } }
@@ -905,7 +913,7 @@ In this case we want the button in visited and link state to look the same.
     width: 18rem;
     height: auto; }
   .footer__navigation {
-    border-top: 1px solid #999;
+    border-top: 1px solid #eee;
     padding-top: 2rem;
     display: inline-block; }
     @media only screen and (max-width: 37.5em) {
@@ -919,18 +927,18 @@ In this case we want the button in visited and link state to look the same.
     .footer__item:not(:last-child) {
       margin-right: 1.5rem; }
   .footer__link:link, .footer__link:visited {
-    color: #f7f7f7;
+    color: #eee;
     background-color: #333;
     text-decoration: none;
     text-transform: uppercase;
     display: inline-block;
     transition: all 0.2s; }
   .footer__link:hover, .footer__link:active {
-    color: #55c57a;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    color: #ff7730;
+    box-shadow: 0 1rem 2rem rgba(151, 64, 17, 0.4);
     transform: rotate(5deg) scale(1.3); }
   .footer__copyright {
-    border-top: 1px solid #999;
+    border-top: 1px solid #eee;
     padding-top: 2rem;
     width: 82%;
     float: right; }
@@ -955,7 +963,7 @@ In this case we want the button in visited and link state to look the same.
   top: 6rem;
   right: 6rem;
   z-index: 2000;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1rem 3rem rgba(151, 64, 17, 0.1);
   text-align: center;
   cursor: pointer; }
   @media only screen and (max-width: 56.25em) {
@@ -978,7 +986,7 @@ In this case we want the button in visited and link state to look the same.
   position: fixed;
   top: 6.5rem;
   right: 6.5rem;
-  background-image: radial-gradient(#7ed56f, #28b485);
+  background-image: radial-gradient(#ffb900, #974011);
   z-index: 1000;
   transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1); }
   @media only screen and (max-width: 56.25em) {
@@ -1018,7 +1026,7 @@ In this case we want the button in visited and link state to look the same.
   font-size: 3rem;
   font-weight: 300;
   padding: 1rem 2rem;
-  color: #fff;
+  color: #333;
   text-decoration: none;
   text-transform: uppercase;
   background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
@@ -1030,7 +1038,7 @@ In this case we want the button in visited and link state to look the same.
 
 .navigation__link:hover, .navigation__link:active {
   background-position: 90%;
-  color: #55c57a;
+  color: #ff7730;
   transform: translateX(1rem); }
 
 .navigation__checkbox:checked ~ .navigation__background {

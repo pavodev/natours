@@ -72,6 +72,7 @@
         cursor: pointer;
         position: relative;
         padding-left: 4.5rem;
+        color: $color-grey-dark-2;
     }
 
     &__radio-btn {
@@ -83,6 +84,7 @@
         position: absolute;
         top: -0.4rem;
         left: -0.4rem;
+       
 
         &::after {
             content: "";
