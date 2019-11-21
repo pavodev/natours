@@ -376,7 +376,7 @@ In this case we want the button in visited and link state to look the same.
     box-shadow: 0 1.5rem 4rem rgba(151, 64, 17, 0.15);
     overflow: hidden; }
     .card__side--front {
-      background-color: #fff; }
+      background-color: #444444; }
     .card__side--back {
       transform: rotateY(180deg); }
       .card__side--back--1 {
@@ -433,7 +433,7 @@ In this case we want the button in visited and link state to look the same.
         text-align: center;
         font-size: 1.5rem;
         padding: 1rem;
-        color: #333; }
+        color: white; }
         .card__details ul li:not(:last-child) {
           border-bottom: 1px solid #eee; }
   .card__cta {
@@ -566,7 +566,7 @@ In this case we want the button in visited and link state to look the same.
 .form__input {
   font-size: 1.5rem;
   font-family: inherit;
-  color: inherit;
+  color: black;
   padding: 1.5rem 2rem;
   border-radius: 2px;
   background-color: rgba(255, 255, 255, 0.5);
@@ -593,7 +593,8 @@ In this case we want the button in visited and link state to look the same.
   margin-left: 2rem;
   margin-top: 0.7rem;
   display: block;
-  transition: all 0.3s; }
+  transition: all 0.3s;
+  color: #333; }
 
 .form__input:placeholder-shown + .form__label {
   opacity: 0;
@@ -672,7 +673,7 @@ In this case we want the button in visited and link state to look the same.
     left: 50%;
     transform: translate(-50%, -50%);
     width: 75%;
-    background-color: #fff;
+    background-color: #333;
     box-shadow: 0 2rem 4rem rgba(151, 64, 17, 0.2);
     border-radius: 5px;
     display: table;
